@@ -1,16 +1,14 @@
 package com.paypay.currencyconverter.ui.currencyconverter
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.lifecycle.lifecycleScope
 import com.paypay.currencyconverter.R
-import com.paypay.currencyconverter.data.DataState
-import com.paypay.currencyconverter.data.DataState.*
 import com.paypay.currencyconverter.data.ConverterIntent
 import com.paypay.currencyconverter.data.CurrencyResponse
+import com.paypay.currencyconverter.data.DataState
+import com.paypay.currencyconverter.data.DataState.*
 import com.paypay.currencyconverter.data.ExchangeRate
 import com.paypay.currencyconverter.databinding.ActivityCurrencyConvertBinding
 import com.paypay.currencyconverter.dependencyinjection.MainActivityComponent
@@ -36,7 +34,6 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
         return R.layout.activity_currency_convert
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun initComponents() {
         binding.apply {
             viewModel = currencyConverterViewModel
