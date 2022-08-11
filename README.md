@@ -1,9 +1,6 @@
-# App Scheduler
+# CurrencyConverter
 
 This project uses a set of Android Jetpack libraries, Uses Dagger2 library for dependency injection and JUnit for unit testing. The App uses Kotlin.
-
-### Note
-After installing the app you must give the "Display over other apps" permission
 
 ### Prerequisites
 
@@ -12,7 +9,7 @@ Add the Project to Android Studio or Intelij and build.All the required dependen
 
 ## Architecture
 
-The project uses MVVM and MVI architecture pattern.
+The project uses MVI architecture pattern.
 
 ## Libraries 
 
@@ -22,13 +19,3 @@ navigation between fragments
 * [Dagger 2](https://dagger.dev/dev-guide/) - For Dependency Injection.
 * [Kotlin Flow](https://developer.android.com/kotlin/flow) - To access data sequentially
 
-
-## Screenshots
-|<img src="screenshots/home.png" width=200/>|<img src="screenshots/create.png" width=200/>|<img src="screenshots/select.png" width=200/>|
-|:----:|:----:|:----:|
-
-## Demo
-|<img src="demo/demo.gif" width=300/>|
-|:----:|
-=======
-# AppScheduler
