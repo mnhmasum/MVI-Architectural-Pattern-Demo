@@ -1,6 +1,8 @@
-package com.paypay.currencyconverter.data
+package com.paypay.currencyconverter.database.dao
 
 import androidx.room.*
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 
 @Dao
 interface CurrencyDao {

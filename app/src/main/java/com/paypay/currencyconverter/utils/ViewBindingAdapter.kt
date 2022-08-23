@@ -7,9 +7,8 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
-import com.paypay.currencyconverter.ui.currencyconverter.CurrencyViewAdapter
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterSpinnerAdapter
 
 @BindingAdapter("setAdapter")

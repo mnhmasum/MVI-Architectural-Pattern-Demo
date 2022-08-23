@@ -8,7 +8,7 @@
 
         <variable
             name="rate"
-            type="com.paypay.currencyconverter.data.ExchangeRate" />
+            type="com.paypay.currencyconverter.database.models.ExchangeRate" />
 
         <variable
             name="adapter"

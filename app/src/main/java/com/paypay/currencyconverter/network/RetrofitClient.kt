@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.retrofit
+package com.paypay.currencyconverter.network
 
 import android.app.Application
 import com.paypay.currencyconverter.BuildConfig

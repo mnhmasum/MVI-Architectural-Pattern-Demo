@@ -6,17 +6,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.paypay.currencyconverter.application.MainApplication
+import com.paypay.currencyconverter.application.BaseApplication
 import com.paypay.currencyconverter.dependencyinjection.ActivityModule
-import com.paypay.currencyconverter.dependencyinjection.DaggerMainActivityComponent
-import com.paypay.currencyconverter.dependencyinjection.MainActivityComponent
+import com.paypay.currencyconverter.dependencyinjection.ActivityComponent
+import com.paypay.currencyconverter.dependencyinjection.DaggerActivityComponent
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
     lateinit var binding: T
     abstract fun getLayoutResource(): Int
     abstract fun initComponents()
-    abstract fun performDependencyInjection(activityComponent: MainActivityComponent)
+    abstract fun performDependencyInjection(activityComponent: ActivityComponent)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +28,10 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         enableIntervalAPICallAlarmService()
     }
 
-    private fun getActivityComponent(): MainActivityComponent {
-        return DaggerMainActivityComponent.builder()
-            .applicationComponent((application as MainApplication).applicationComponent)
-            .activityModule(ActivityModule(this))
+    private fun getActivityComponent(): ActivityComponent {
+        return DaggerActivityComponent.builder()
+            .applicationComponent((application as BaseApplication).applicationComponent)
+            .activityModule(ActivityModule())
             .build()
     }
 

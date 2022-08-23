@@ -1,4 +1,7 @@
-package com.paypay.currencyconverter.data
+package com.paypay.currencyconverter.utils
+
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 
 sealed class DataState {
     object Idle : DataState()

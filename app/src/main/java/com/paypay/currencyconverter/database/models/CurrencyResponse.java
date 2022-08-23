@@ -1,5 +1,5 @@
 
-package com.paypay.currencyconverter.data;
+package com.paypay.currencyconverter.database.models;
 
 
 import androidx.room.Entity;

@@ -5,13 +5,13 @@ import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.lifecycle.lifecycleScope
 import com.paypay.currencyconverter.R
-import com.paypay.currencyconverter.data.ConverterIntent
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.DataState
-import com.paypay.currencyconverter.data.DataState.*
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.utils.ConverterIntent
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.utils.DataState
+import com.paypay.currencyconverter.utils.DataState.*
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.databinding.ActivityCurrencyConvertBinding
-import com.paypay.currencyconverter.dependencyinjection.MainActivityComponent
+import com.paypay.currencyconverter.dependencyinjection.ActivityComponent
 import com.paypay.currencyconverter.ui.base.BaseActivity
 import com.paypay.currencyconverter.utils.getUserInput
 import kotlinx.android.synthetic.main.activity_currency_convert.*
@@ -26,7 +26,7 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
     @Inject
     lateinit var currencyViewAdapter: CurrencyViewAdapter
 
-    override fun performDependencyInjection(activityComponent: MainActivityComponent) {
+    override fun performDependencyInjection(activityComponent: ActivityComponent) {
         activityComponent.inject(this)
     }
 

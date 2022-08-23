@@ -1,7 +1,7 @@
 package com.paypay.currencyconverter.apiclient
 
-import com.paypay.currencyconverter.retrofit.apiClient
-import com.paypay.currencyconverter.retrofit.initRetrofit
+import com.paypay.currencyconverter.network.apiClient
+import com.paypay.currencyconverter.network.initRetrofit
 import com.paypay.currencyconverter.utils.Constant
 import kotlinx.coroutines.runBlocking
 import org.junit.Test

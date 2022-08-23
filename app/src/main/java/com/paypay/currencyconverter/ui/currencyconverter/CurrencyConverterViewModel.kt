@@ -3,11 +3,11 @@ package com.paypay.currencyconverter.ui.currencyconverter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.paypay.currencyconverter.data.DataState
-import com.paypay.currencyconverter.data.ConverterIntent
-import com.paypay.currencyconverter.data.ConverterIntent.*
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.utils.DataState
+import com.paypay.currencyconverter.utils.ConverterIntent
+import com.paypay.currencyconverter.utils.ConverterIntent.*
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.repository.CurrencyConverterRepositoryInterface
 import com.paypay.currencyconverter.utils.ConverterUtil
 import kotlinx.coroutines.Dispatchers

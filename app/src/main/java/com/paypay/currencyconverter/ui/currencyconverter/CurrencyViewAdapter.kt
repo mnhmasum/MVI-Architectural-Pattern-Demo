@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.paypay.currencyconverter.R
 import com.paypay.currencyconverter.databinding.ItemCurrencyBinding
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import java.util.*
 
 class CurrencyViewAdapter(private var currencyConverterViewModel: CurrencyConverterViewModel) :

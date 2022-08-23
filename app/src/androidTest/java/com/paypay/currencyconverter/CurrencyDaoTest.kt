@@ -3,9 +3,9 @@ package com.paypay.currencyconverter
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.paypay.currencyconverter.data.AppDatabase
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.database.AppDatabase
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import org.junit.After
 import org.junit.Assert.assertThat
 import org.junit.Before
@@ -62,7 +62,8 @@ class CurrencyDaoTest {
     }
 
     private fun getDummyCurrencyResponse(): CurrencyResponse {
-        val currencyData = CurrencyResponse()
+        val currencyData =
+            CurrencyResponse()
         currencyData.id = 1
         currencyData.base = "USD"
         return currencyData

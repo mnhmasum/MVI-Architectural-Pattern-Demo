@@ -1,10 +1,10 @@
 package com.paypay.currencyconverter.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.paypay.currencyconverter.data.ConverterIntent
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.DataState
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.utils.ConverterIntent
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.utils.DataState
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.repo.FakeCurrencyConverterRepository
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterViewModel
 import junit.framework.Assert.assertEquals
@@ -73,7 +73,8 @@ class CurrencyConverterViewModelTest {
         val exchangeRates: ArrayList<ExchangeRate> = ArrayList()
         exchangeRates.add(ExchangeRate("USD", 1.0))
         exchangeRates.add(ExchangeRate("BDT", 87.0))
-        val currencyData = CurrencyResponse()
+        val currencyData =
+            CurrencyResponse()
         currencyData.id = 123
         currencyData.base = "USD"
         currencyData.license = "randomcharacters"

@@ -1,13 +1,14 @@
 package com.paypay.currencyconverter.repo
 
 import androidx.lifecycle.MutableLiveData
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.repository.CurrencyConverterRepositoryInterface
 
 class FakeCurrencyConverterRepository : CurrencyConverterRepositoryInterface {
 
-    private var currencyData = CurrencyResponse()
+    private var currencyData =
+        CurrencyResponse()
     private val currencyLiveData = MutableLiveData<CurrencyResponse>(currencyData)
 
     override suspend fun insert(currencyData: CurrencyResponse) {
@@ -51,7 +52,8 @@ class FakeCurrencyConverterRepository : CurrencyConverterRepositoryInterface {
     }
 
     private fun currencyDummyData(): CurrencyResponse {
-        val currencyData = CurrencyResponse()
+        val currencyData =
+            CurrencyResponse()
         currencyData.id = 123
         currencyData.base = "USD"
         currencyData.license = "https://openexchangerates.org/license"

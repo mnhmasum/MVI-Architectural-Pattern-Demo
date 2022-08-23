@@ -1,6 +1,6 @@
-package com.paypay.currencyconverter.retrofit
+package com.paypay.currencyconverter.network
 
-import com.paypay.currencyconverter.data.CurrencyResponse
+import com.paypay.currencyconverter.database.models.CurrencyResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

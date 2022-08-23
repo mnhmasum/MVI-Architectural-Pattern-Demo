@@ -1,7 +1,6 @@
 package com.paypay.currencyconverter.dependencyinjection
 
-import android.content.Context
-import com.paypay.currencyconverter.data.CurrencyDao
+import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.dependencyinjection.scope.PerActivity
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterViewModel
@@ -13,7 +12,7 @@ import dagger.Provides
  * Created by nazmul 08/06/2022.
  */
 @Module
-class ActivityModule(private val context: Context) {
+class ActivityModule() {
 
     @Provides
     fun provideCurrencyRepository(currencyDao: CurrencyDao): CurrencyConverterRepository {

@@ -1,9 +1,9 @@
 package com.paypay.currencyconverter.repository
 
-import com.paypay.currencyconverter.data.CurrencyDao
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
-import com.paypay.currencyconverter.retrofit.apiClient
+import com.paypay.currencyconverter.database.dao.CurrencyDao
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
+import com.paypay.currencyconverter.network.apiClient
 import com.paypay.currencyconverter.utils.Constant
 
 

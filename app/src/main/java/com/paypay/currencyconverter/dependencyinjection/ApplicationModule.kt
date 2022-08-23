@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import com.paypay.currencyconverter.data.AppDatabase
-import com.paypay.currencyconverter.data.CurrencyDao
+import com.paypay.currencyconverter.database.AppDatabase
+import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.dependencyinjection.qualifier.DatabaseName
 import javax.inject.Singleton
 
@@ -19,6 +19,7 @@ class ApplicationModule(private val mApplication: Application) {
     }
 
     @Provides
+    @Singleton
     fun provideDatabase(@DatabaseName dbName: String): AppDatabase {
         return Room.databaseBuilder(mApplication, AppDatabase::class.java, dbName).build()
     }

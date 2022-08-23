@@ -1,4 +1,6 @@
-package com.paypay.currencyconverter.data
+package com.paypay.currencyconverter.utils
+
+import com.paypay.currencyconverter.database.models.CurrencyResponse
 
 sealed class ConverterIntent {
     object Fetch : ConverterIntent()

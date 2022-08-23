@@ -3,8 +3,8 @@ package com.paypay.currencyconverter
 import android.app.Application
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.paypay.currencyconverter.retrofit.apiClient
-import com.paypay.currencyconverter.retrofit.initRetrofit
+import com.paypay.currencyconverter.network.apiClient
+import com.paypay.currencyconverter.network.initRetrofit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.paypay.currencyconverter.R
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.database.models.ExchangeRate
 import kotlinx.android.synthetic.main.item_rate.view.*
 
 class CurrencyConverterSpinnerAdapter(ctx: Context, moods: List<ExchangeRate>) : ArrayAdapter<ExchangeRate>(ctx, 0, moods) {

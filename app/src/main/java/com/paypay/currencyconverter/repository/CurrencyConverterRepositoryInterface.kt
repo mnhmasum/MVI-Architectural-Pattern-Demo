@@ -1,7 +1,7 @@
 package com.paypay.currencyconverter.repository
 
-import com.paypay.currencyconverter.data.CurrencyResponse
-import com.paypay.currencyconverter.data.ExchangeRate
+import com.paypay.currencyconverter.database.models.CurrencyResponse
+import com.paypay.currencyconverter.database.models.ExchangeRate
 
 
 interface CurrencyConverterRepositoryInterface {

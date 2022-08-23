@@ -1,7 +1,8 @@
-package com.paypay.currencyconverter.data
+package com.paypay.currencyconverter.database
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
+import com.paypay.currencyconverter.database.models.ExchangeRate
 
 class Converters {
 
