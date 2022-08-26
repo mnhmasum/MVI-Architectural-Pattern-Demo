@@ -58,7 +58,7 @@ class CurrencyConverterViewModel internal constructor(private val currencyRepoIn
         currencyResponse?.let { currencyLiveData.postValue(it) }
     }
 
-    private fun startConversion(it: ConverterIntent.Convert) {
+    private fun startConversion(it: Convert) {
         viewModelScope.launch(Dispatchers.IO) {
             _dataState.value = DataState.Loading
             _dataState.value = DataState.ConversionSuccess(getConvertedCurrencyList(it))
@@ -75,7 +75,7 @@ class CurrencyConverterViewModel internal constructor(private val currencyRepoIn
     fun onTextChangeComplete(text: CharSequence?) {
         val input = if (text.toString().isNotEmpty()) text.toString().toDouble() else 0.0
         viewModelScope.launch(Dispatchers.IO) {
-            intentAction.send(ConverterIntent.Convert(input, selectedRate.value))
+            intentAction.send(Convert(input, selectedRate.value))
         }
     }
 

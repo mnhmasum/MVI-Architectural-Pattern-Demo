@@ -2,6 +2,7 @@ package com.paypay.currencyconverter.dependencyinjection
 
 import android.app.Application
 import androidx.room.Room
+import com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerService
 import dagger.Module
 import dagger.Provides
 import com.paypay.currencyconverter.database.AppDatabase
@@ -34,6 +35,12 @@ class ApplicationModule(private val mApplication: Application) {
     @Singleton
     fun provideApplication(): Application {
         return mApplication
+    }
+
+    @Provides
+    @Singleton
+    fun provideRetrofit(appDatabase: AppDatabase): CurrencyDao {
+        return appDatabase.currencyDao()
     }
 
 }

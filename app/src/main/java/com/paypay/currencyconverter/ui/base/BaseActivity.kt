@@ -30,7 +30,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     private fun getActivityComponent(): ActivityComponent {
         return DaggerActivityComponent.builder()
-            .applicationComponent((application as BaseApplication).applicationComponent)
+            .applicationComponent(BaseApplication.applicationComponent)
             .activityModule(ActivityModule())
             .build()
     }

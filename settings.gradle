@@ -1,3 +1,2 @@
-include ':push'
 include ':app'
 rootProject.name = "CurrencyConverter"

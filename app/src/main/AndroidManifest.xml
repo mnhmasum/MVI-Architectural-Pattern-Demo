@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerBroadcastReceiver">
+        <receiver android:name="com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerService">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

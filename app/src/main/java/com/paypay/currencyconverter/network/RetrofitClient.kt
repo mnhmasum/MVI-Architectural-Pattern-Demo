@@ -9,7 +9,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val baseUrl = "https://raw.githubusercontent.com/carensiehl/ActNowAZ_JSON/master/" //?country=in&apiKey=51020d256c68430ba9bd415505885b3e/
 
 private val logInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 

@@ -4,12 +4,12 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerBroadcastReceiver
+import com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerService
 import com.paypay.currencyconverter.databinding.ActivityCurrencyConvertBinding
 
 fun Context.enableIntervalAPICallAlarmService() {
     val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-    val intent = Intent(this, SyncSchedulerBroadcastReceiver::class.java)
+    val intent = Intent(this, SyncSchedulerService::class.java)
     val alarmPendingIntent =
         PendingIntent.getBroadcast(this, Constant.ALARM_REQUEST_CODE, intent, 0)
     alarmManager.setInexactRepeating(

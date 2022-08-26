@@ -10,4 +10,5 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun inject(app: BaseApplication)
     fun exposeCurrencyDao(): CurrencyDao
+    fun synSchedulerComponent(activityModule: ActivityModule): SyncSchedulerComponent
 }
