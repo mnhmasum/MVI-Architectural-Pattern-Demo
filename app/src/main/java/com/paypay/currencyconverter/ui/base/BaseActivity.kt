@@ -7,9 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.paypay.currencyconverter.application.BaseApplication
-import com.paypay.currencyconverter.dependencyinjection.ActivityModule
-import com.paypay.currencyconverter.dependencyinjection.ActivityComponent
-import com.paypay.currencyconverter.dependencyinjection.DaggerActivityComponent
+import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
+import com.paypay.currencyconverter.dependencyinjection.components.ActivityComponent
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
@@ -29,10 +28,13 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
     }
 
     private fun getActivityComponent(): ActivityComponent {
-        return DaggerActivityComponent.builder()
+
+        return BaseApplication.applicationComponent.activityComponent(ActivityModule())
+
+        /*return DaggerActivityComponent.builder()
             .applicationComponent(BaseApplication.applicationComponent)
             .activityModule(ActivityModule())
-            .build()
+            .build()*/
     }
 
     open fun startActivity(cls: Class<*>?, finishSelf: Boolean) {

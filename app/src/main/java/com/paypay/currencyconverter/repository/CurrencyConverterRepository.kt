@@ -3,11 +3,11 @@ package com.paypay.currencyconverter.repository
 import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.database.models.CurrencyResponse
 import com.paypay.currencyconverter.database.models.ExchangeRate
-import com.paypay.currencyconverter.network.apiClient
+import com.paypay.currencyconverter.network.NetworkSource
 import com.paypay.currencyconverter.utils.Constant
 
 
-class CurrencyConverterRepository constructor(private val dao: CurrencyDao) : CurrencyConverterRepositoryInterface {
+class CurrencyConverterRepository constructor(private val dao: CurrencyDao, private val networkSource:NetworkSource) : CurrencyConverterRepositoryInterface {
     override suspend fun insert(currencyData: CurrencyResponse) {
         dao.insert(currencyData)
         insert(currencyData.rateListFromAPI)
@@ -43,7 +43,7 @@ class CurrencyConverterRepository constructor(private val dao: CurrencyDao) : Cu
     }
 
     private suspend fun callExchangeRateAPI(): CurrencyResponse? {
-        val result = apiClient().getRepositories(Constant.API_KEY)
+        val result = networkSource.getRepositories(Constant.API_KEY)
         if (result.isSuccessful) {
             result.body()?.let { insert(it) }
         }

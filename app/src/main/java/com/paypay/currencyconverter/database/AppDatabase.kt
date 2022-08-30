@@ -7,7 +7,7 @@ import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.database.models.CurrencyResponse
 import com.paypay.currencyconverter.database.models.ExchangeRate
 
-@Database(entities = [CurrencyResponse::class, ExchangeRate::class], version = 1, exportSchema = true)
+@Database(entities = [CurrencyResponse::class, ExchangeRate::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun currencyDao(): CurrencyDao

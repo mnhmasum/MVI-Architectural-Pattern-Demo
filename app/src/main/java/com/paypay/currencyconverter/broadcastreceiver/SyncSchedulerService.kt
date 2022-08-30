@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.paypay.currencyconverter.application.BaseApplication
-import com.paypay.currencyconverter.dependencyinjection.ActivityModule
+import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
 import kotlinx.coroutines.Dispatchers
@@ -15,12 +15,11 @@ import javax.inject.Inject
 
 
 class SyncSchedulerService : BroadcastReceiver() {
-     @Inject
-     lateinit var currencyConverterRepository: CurrencyConverterRepository
+    @Inject
+    lateinit var currencyConverterRepository: CurrencyConverterRepository
 
     override fun onReceive(context: Context, intent: Intent) {
-
-        BaseApplication.applicationComponent.synSchedulerComponent(ActivityModule()).inject(this)
+        BaseApplication.applicationComponent.activityComponent(ActivityModule()).inject(this)
 
         if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
             context.enableIntervalAPICallAlarmService()

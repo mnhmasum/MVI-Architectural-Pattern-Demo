@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection
+package com.paypay.currencyconverter.dependencyinjection.modules
 
 import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.dependencyinjection.scope.PerActivity
@@ -13,11 +13,6 @@ import dagger.Provides
  */
 @Module
 class ActivityModule() {
-
-    @Provides
-    fun provideCurrencyRepository(currencyDao: CurrencyDao): CurrencyConverterRepository {
-        return CurrencyConverterRepository(currencyDao)
-    }
 
     @Provides
     @PerActivity

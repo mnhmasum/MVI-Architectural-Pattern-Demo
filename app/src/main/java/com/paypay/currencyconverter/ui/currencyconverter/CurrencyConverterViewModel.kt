@@ -3,13 +3,13 @@ package com.paypay.currencyconverter.ui.currencyconverter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.paypay.currencyconverter.utils.DataState
-import com.paypay.currencyconverter.utils.ConverterIntent
-import com.paypay.currencyconverter.utils.ConverterIntent.*
 import com.paypay.currencyconverter.database.models.CurrencyResponse
 import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.repository.CurrencyConverterRepositoryInterface
+import com.paypay.currencyconverter.utils.ConverterIntent
+import com.paypay.currencyconverter.utils.ConverterIntent.*
 import com.paypay.currencyconverter.utils.ConverterUtil
+import com.paypay.currencyconverter.utils.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +18,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
-class CurrencyConverterViewModel internal constructor(private val currencyRepoInterface: CurrencyConverterRepositoryInterface) :
-    ViewModel() {
+class CurrencyConverterViewModel internal constructor(private val currencyRepoInterface: CurrencyConverterRepositoryInterface) : ViewModel() {
     val intentAction = Channel<ConverterIntent>()
     val currencyLiveData = MutableLiveData<CurrencyResponse>()
     private var selectedRate = MutableLiveData(0.0)
@@ -50,7 +49,7 @@ class CurrencyConverterViewModel internal constructor(private val currencyRepoIn
         }
     }
 
-    suspend fun fetchDataFromRepository(): CurrencyResponse? {
+    private suspend fun fetchDataFromRepository(): CurrencyResponse? {
         return currencyRepoInterface.getCurrencyData()
     }
 
@@ -78,5 +77,7 @@ class CurrencyConverterViewModel internal constructor(private val currencyRepoIn
             intentAction.send(Convert(input, selectedRate.value))
         }
     }
+
+
 
 }
