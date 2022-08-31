@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="bindViewModel"
+            name="viewModel"
             type="com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterViewModel" />
 
         <variable

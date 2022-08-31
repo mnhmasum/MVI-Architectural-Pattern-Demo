@@ -3,7 +3,7 @@ package com.paypay.currencyconverter.dependencyinjection.modules
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.paypay.currencyconverter.BuildConfig
-import com.paypay.currencyconverter.network.NetworkSource
+import com.paypay.currencyconverter.network.ExchangeRateAPI
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -55,7 +55,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideNetworkSource(retrofit: Retrofit): NetworkSource = retrofit.create(NetworkSource::class.java)
+    fun provideNetworkSource(retrofit: Retrofit): ExchangeRateAPI = retrofit.create(ExchangeRateAPI::class.java)
 
     private val logInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 

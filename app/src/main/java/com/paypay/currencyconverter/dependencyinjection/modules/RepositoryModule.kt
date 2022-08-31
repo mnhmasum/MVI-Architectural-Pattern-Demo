@@ -1,7 +1,7 @@
 package com.paypay.currencyconverter.dependencyinjection.modules
 
 import com.paypay.currencyconverter.database.dao.CurrencyDao
-import com.paypay.currencyconverter.network.NetworkSource
+import com.paypay.currencyconverter.network.ExchangeRateAPI
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import dagger.Module
 import dagger.Provides
@@ -15,8 +15,8 @@ class RepositoryModule() {
 
     @Provides
     @Singleton
-    fun provideCurrencyRepository(currencyDao: CurrencyDao, networkSource: NetworkSource): CurrencyConverterRepository {
-        return CurrencyConverterRepository(currencyDao, networkSource)
+    fun provideCurrencyRepository(currencyDao: CurrencyDao, exchangeRateAPI: ExchangeRateAPI): CurrencyConverterRepository {
+        return CurrencyConverterRepository(currencyDao, exchangeRateAPI)
     }
 
 }

@@ -21,7 +21,7 @@ import javax.inject.Inject
 
 class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>() {
     @Inject
-    lateinit var viewModel: CurrencyConverterViewModel
+    lateinit var currencyConverterViewModel: CurrencyConverterViewModel
 
     @Inject
     lateinit var currencyViewAdapter: CurrencyViewAdapter
@@ -36,17 +36,17 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
 
     override fun initComponents() {
         binding.apply {
-            bindViewModel = viewModel
+            viewModel = currencyConverterViewModel
             adapter = currencyViewAdapter
             activity = this@CurrencyConverterActivity
         }
 
         lifecycleScope.launch {
             launch {
-                viewModel.intentAction.send(ConverterIntent.Fetch)
+                currencyConverterViewModel.intentAction.send(ConverterIntent.Fetch)
             }
             launch {
-                viewModel.dataState.collect { render(it) }
+                currencyConverterViewModel.dataState.collect { render(it) }
             }
         }
     }
@@ -66,7 +66,7 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
 
     private fun updateBaseRateSpinner(it: CurrencyResponse?) {
         lifecycleScope.launch {
-            viewModel.intentAction.send(ConverterIntent.UpdateSpinner(it))
+            currencyConverterViewModel.intentAction.send(ConverterIntent.UpdateSpinner(it))
         }
     }
 
@@ -81,7 +81,7 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
     private fun inputSendToConverter(selectedRate: Double?) {
         lifecycleScope.launch {
             val startConversion = ConverterIntent.Convert(getUserInput(binding), selectedRate)
-            viewModel.intentAction.send(startConversion)
+            currencyConverterViewModel.intentAction.send(startConversion)
         }
     }
 
