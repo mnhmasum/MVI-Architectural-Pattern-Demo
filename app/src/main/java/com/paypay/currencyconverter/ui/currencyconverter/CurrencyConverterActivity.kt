@@ -21,12 +21,12 @@ import javax.inject.Inject
 
 class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>() {
     @Inject
-    lateinit var currencyConverterViewModel: CurrencyConverterViewModel
+    lateinit var viewModel: CurrencyConverterViewModel
 
     @Inject
     lateinit var currencyViewAdapter: CurrencyViewAdapter
 
-    override fun performDependencyInjection(activityComponent: ActivityComponent) {
+    override fun injectActivity(activityComponent: ActivityComponent) {
         activityComponent.inject(this)
     }
 
@@ -36,17 +36,17 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
 
     override fun initComponents() {
         binding.apply {
-            viewModel = currencyConverterViewModel
+            bindViewModel = viewModel
             adapter = currencyViewAdapter
             activity = this@CurrencyConverterActivity
         }
 
         lifecycleScope.launch {
             launch {
-                currencyConverterViewModel.intentAction.send(ConverterIntent.Fetch)
+                viewModel.intentAction.send(ConverterIntent.Fetch)
             }
             launch {
-                currencyConverterViewModel.dataState.collect { render(it) }
+                viewModel.dataState.collect { render(it) }
             }
         }
     }
@@ -66,7 +66,7 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
 
     private fun updateBaseRateSpinner(it: CurrencyResponse?) {
         lifecycleScope.launch {
-            currencyConverterViewModel.intentAction.send(ConverterIntent.UpdateSpinner(it))
+            viewModel.intentAction.send(ConverterIntent.UpdateSpinner(it))
         }
     }
 
@@ -81,7 +81,7 @@ class CurrencyConverterActivity : BaseActivity<ActivityCurrencyConvertBinding>()
     private fun inputSendToConverter(selectedRate: Double?) {
         lifecycleScope.launch {
             val startConversion = ConverterIntent.Convert(getUserInput(binding), selectedRate)
-            currencyConverterViewModel.intentAction.send(startConversion)
+            viewModel.intentAction.send(startConversion)
         }
     }
 

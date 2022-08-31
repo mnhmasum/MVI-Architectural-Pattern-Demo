@@ -10,7 +10,7 @@ import com.paypay.currencyconverter.dependencyinjection.qualifier.DatabaseName
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(private val mApplication: Application) {
+class ApplicationModule() {
 
     @Provides
     @DatabaseName
@@ -20,7 +20,7 @@ class ApplicationModule(private val mApplication: Application) {
 
     @Provides
     @Singleton
-    fun provideDatabase(@DatabaseName dbName: String): AppDatabase {
+    fun provideDatabase(@DatabaseName dbName: String, mApplication: Application): AppDatabase {
         return Room.databaseBuilder(mApplication, AppDatabase::class.java, dbName).build()
     }
 
@@ -28,11 +28,5 @@ class ApplicationModule(private val mApplication: Application) {
     fun provideCurrencyDao(appDatabase: AppDatabase): CurrencyDao {
         return appDatabase.currencyDao()
     }
-/*
-    @Provides
-    @Singleton
-    fun provideApplication(): Application {
-        return mApplication
-    }*/
 
 }

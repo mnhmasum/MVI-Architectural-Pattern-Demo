@@ -3,32 +3,41 @@ package com.paypay.currencyconverter.broadcastreceiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.util.Log
-import com.paypay.currencyconverter.application.BaseApplication
+import com.paypay.currencyconverter.ui.base.BaseApplication
 import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 
 class SyncSchedulerService : BroadcastReceiver() {
     @Inject
-    lateinit var currencyConverterRepository: CurrencyConverterRepository
+    lateinit var converterRepository: CurrencyConverterRepository
 
     override fun onReceive(context: Context, intent: Intent) {
-        BaseApplication.applicationComponent.activityComponent(ActivityModule()).inject(this)
+        BaseApplication.appComponent
+                .activityComponent(ActivityModule())
+                .inject(this)
 
+        performSyncService(intent, context)
+    }
+
+    private fun performSyncService(intent: Intent, context: Context) {
         if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
-            context.enableIntervalAPICallAlarmService()
-            Log.d("Fired", "onReceive: ")
+            startSyncService(context)
         } else {
-            GlobalScope.launch(Dispatchers.IO) {
-                currencyConverterRepository.getCurrencyData()
-                Log.d("Fired", "onReceive: done ")
-            }
+            startSyncing()
         }
+    }
+
+    private fun startSyncing() {
+        GlobalScope.launch(Dispatchers.IO) {
+            converterRepository.getCurrencyData()
+        }
+    }
+
+    private fun startSyncService(context: Context) {
+        context.enableIntervalAPICallAlarmService()
     }
 }
