@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection.qualifier
+package com.paypay.currencyconverter.di.qualifier
 
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy

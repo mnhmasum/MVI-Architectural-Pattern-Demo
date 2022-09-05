@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.paypay.currencyconverter.ui.base.BaseApplication
-import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
+import com.paypay.currencyconverter.di.modules.ActivityModule
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
 import kotlinx.coroutines.*

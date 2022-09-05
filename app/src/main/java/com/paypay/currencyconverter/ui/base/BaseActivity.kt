@@ -6,8 +6,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
-import com.paypay.currencyconverter.dependencyinjection.components.ActivityComponent
+import com.paypay.currencyconverter.di.modules.ActivityModule
+import com.paypay.currencyconverter.di.components.ActivityComponent
 import com.paypay.currencyconverter.utils.enableIntervalAPICallAlarmService
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {

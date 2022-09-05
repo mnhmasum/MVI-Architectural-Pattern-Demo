@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection.modules
+package com.paypay.currencyconverter.di.modules
 
 import com.paypay.currencyconverter.database.dao.CurrencyDao
 import com.paypay.currencyconverter.network.ExchangeRateAPI

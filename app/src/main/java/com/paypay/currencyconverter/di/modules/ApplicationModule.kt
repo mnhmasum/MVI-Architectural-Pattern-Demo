@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection.modules
+package com.paypay.currencyconverter.di.modules
 
 import android.app.Application
 import androidx.room.Room
@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 import com.paypay.currencyconverter.database.AppDatabase
 import com.paypay.currencyconverter.database.dao.CurrencyDao
-import com.paypay.currencyconverter.dependencyinjection.qualifier.DatabaseName
+import com.paypay.currencyconverter.di.qualifier.DatabaseName
 import javax.inject.Singleton
 
 @Module

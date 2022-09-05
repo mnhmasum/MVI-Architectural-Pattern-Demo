@@ -1,8 +1,8 @@
-package com.paypay.currencyconverter.dependencyinjection.components
+package com.paypay.currencyconverter.di.components
 
 import com.paypay.currencyconverter.broadcastreceiver.SyncSchedulerService
-import com.paypay.currencyconverter.dependencyinjection.modules.ActivityModule
-import com.paypay.currencyconverter.dependencyinjection.scope.PerActivity
+import com.paypay.currencyconverter.di.modules.ActivityModule
+import com.paypay.currencyconverter.di.scope.PerActivity
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterActivity
 import dagger.Subcomponent
 

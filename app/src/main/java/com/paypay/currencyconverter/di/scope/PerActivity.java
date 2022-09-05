@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection.scope;
+package com.paypay.currencyconverter.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

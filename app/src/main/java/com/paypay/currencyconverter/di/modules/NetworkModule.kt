@@ -1,4 +1,4 @@
-package com.paypay.currencyconverter.dependencyinjection.modules
+package com.paypay.currencyconverter.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

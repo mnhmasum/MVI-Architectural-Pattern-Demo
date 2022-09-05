@@ -11,7 +11,7 @@ import com.paypay.currencyconverter.utils.DataState
 import com.paypay.currencyconverter.utils.DataState.*
 import com.paypay.currencyconverter.database.models.ExchangeRate
 import com.paypay.currencyconverter.databinding.ActivityCurrencyConvertBinding
-import com.paypay.currencyconverter.dependencyinjection.components.ActivityComponent
+import com.paypay.currencyconverter.di.components.ActivityComponent
 import com.paypay.currencyconverter.ui.base.BaseActivity
 import com.paypay.currencyconverter.utils.getUserInput
 import kotlinx.android.synthetic.main.activity_currency_convert.*

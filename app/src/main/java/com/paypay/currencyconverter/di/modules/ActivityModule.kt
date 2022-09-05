@@ -1,7 +1,6 @@
-package com.paypay.currencyconverter.dependencyinjection.modules
+package com.paypay.currencyconverter.di.modules
 
-import com.paypay.currencyconverter.database.dao.CurrencyDao
-import com.paypay.currencyconverter.dependencyinjection.scope.PerActivity
+import com.paypay.currencyconverter.di.scope.PerActivity
 import com.paypay.currencyconverter.repository.CurrencyConverterRepository
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyConverterViewModel
 import com.paypay.currencyconverter.ui.currencyconverter.CurrencyViewAdapter

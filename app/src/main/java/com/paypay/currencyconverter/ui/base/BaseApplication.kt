@@ -1,8 +1,8 @@
 package com.paypay.currencyconverter.ui.base
 
 import android.app.Application
-import com.paypay.currencyconverter.dependencyinjection.components.ApplicationComponent
-import com.paypay.currencyconverter.dependencyinjection.components.DaggerApplicationComponent
+import com.paypay.currencyconverter.di.components.ApplicationComponent
+import com.paypay.currencyconverter.di.components.DaggerApplicationComponent
 
 class BaseApplication : Application() {
 
