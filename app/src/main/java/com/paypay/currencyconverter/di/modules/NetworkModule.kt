@@ -12,10 +12,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-/**
- * Created by Dimitris Konomis (konomis.dimitris@gmail.com) on 13/11/2018.
- **/
-
 @Module
 class NetworkModule {
 
